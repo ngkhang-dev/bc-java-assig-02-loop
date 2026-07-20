@@ -1,13 +1,55 @@
 # Assignment 02 - Session 04 - Loop
 
-## Câu 1
+![Java](https://img.shields.io/badge/Java-21-orange?logo=openjdk)
+![Status](https://img.shields.io/badge/status-completed-brightgreen)
+
+<!-- TOC -->
+
+* [Assignment 02 - Session 04 - Loop](#assignment-02---session-04---loop)
+    * [Prerequisites](#prerequisites)
+        * [Project Structure](#project-structure)
+        * [Environment](#environment)
+    * [Questions](#questions)
+        * [Câu 1](#câu-1)
+        * [Câu 2](#câu-2)
+        * [Câu 3](#câu-3)
+        * [Câu 4](#câu-4)
+        * [Câu 5](#câu-5)
+    * [Author](#author)
+
+<!-- TOC -->
+
+## Prerequisites
+
+### Project Structure
+
+```text
+./
+│   .gitignore
+│   README.md
+└───src
+        Question01.java
+        Question02.java
+        Question03.java
+        Question04.java
+        Question05.java
+```
+
+### Environment
+
+- IDE: IntelliJ IDEA
+- JDK: 21 or higher
+
+## Questions
+
+### Câu 1
 
 - **Đề bài**:
-  - Xây dựng trò chơi Oẳn Tù Tì (Bao, Kéo, Bao). Người và máy sẽ chơi với nhau.
-  - Nhấn một số khác 0 để chơi tiếp, nhấn 0 để dừng lại.
-  - Tính xem ai là người chơi thắng nhiều nhất và tỉ số.
+    - Xây dựng trò chơi Oẳn Tù Tì (Bao, Kéo, Bao). Người và máy sẽ chơi với nhau.
+    - Nhấn một số khác 0 để chơi tiếp, nhấn 0 để dừng lại.
+    - Tính xem ai là người chơi thắng nhiều nhất và tỉ số.
 
-- Mô hình 3 khối:
+- **Mô hình 3 khối**:
 
    ```mermaid
    flowchart LR
@@ -27,7 +69,6 @@
            STEP5["Chọn giá trị (Bao-1, Kéo-2, Búa-3) dựa vào số nhập của người dùng và số random"]
            STEP6["Điều kiện: Bao > Búa, Bùa > Kéo, Kéo > Búa dể xác định người thắng trong trận và tăng tỷ số"]
            STEP7["Lặp lại đến khi giá trị nhập vào là 0"]
-  
        end
        
        OUTPUT["`**Output**
@@ -35,12 +76,14 @@
        `"]
    ```
 
-## Câu 2
+- **Ví dụ** (một ván): Nhập `1` (Bao) → máy random ra `3` (Búa) → `Người chơi thắng`.
+
+### Câu 2
 
 - **Đề bài**:
-  - Tìm số nguyên dương n nhỏ nhất sao cho: 1 + 2 + 3 + ... n > 10000
+    - Tìm số nguyên dương n nhỏ nhất sao cho: 1 + 2 + 3 + ... n > 10000
 
-- Mô hình 3 khối:
+- **Mô hình 3 khối**:
 
    ```mermaid
    flowchart LR
@@ -49,11 +92,12 @@
        INPUT["`**Input**`"]
        
        subgraph PROCESS["`**Process**`"]
-           STEP1  --> STEP2 --> STEP3 
+           STEP1  --> STEP2 --> STEP3 --> STEP4
            
            STEP1["Tạo các biến: total=0, MIN_TOTAL_NUMBERS = 10000 và n"]
-           STEP2["Khởi tạo biến i=1. Nếu total >= MIN_TOTAL_NUMBERS, gán n = i và thoát vòng lặp. Ngược lại, total = total + i và i tăng 1"]
-           STEP3["In ra số nn"]
+           STEP2["Khởi tạo biến i=1, total =0;"]
+           STEP3["Tính và gán giá trị: total = total + 1"]
+           STEP4["Nếu total >= MIN_TOTAL_NUMBERS, gán n = i và thoát vòng lặp. Ngược lại tăng i thêm 1, lặp lại STEP3"]
        end
        
        OUTPUT["`**Output**
@@ -61,13 +105,13 @@
        `"]
    ```
 
-## Câu 3
+### Câu 3
 
 - **Đề bài**:
-  - Viết chương trình tính tổng các số lẻ nguyên dương nhỏ hơn n, được nhập từ người dùng.
-  - Chỉ cho phép nhập số > 0, yêu cầu nhập lại nếu không đúng yêu cầu.
+    - Viết chương trình tính tổng các số lẻ nguyên dương nhỏ hơn n, được nhập từ người dùng.
+    - Chỉ cho phép nhập số > 0, yêu cầu nhập lại nếu không đúng yêu cầu.
 
-- Mô hình 3 khối:
+- **Mô hình 3 khối**:
 
    ```mermaid
    flowchart LR
@@ -90,12 +134,18 @@
        `"]
    ```
 
-## Câu 4
+- **Ví dụ**:
+
+    | n  | Kết quả                                        |
+    |----|------------------------------------------------|
+    | 10 | `Tổng các số lẻ nguyên dương nhỏ hơn n là: 25` |
+
+### Câu 4
 
 - **Đề bài**:
-  - Viết chương trình nhập n và tính tổng `S(n) = x + x^2 + x^3 + ... + x^n`.
+    - Viết chương trình nhập n và tính tổng `S(n) = x + x^2 + x^3 + ... + x^n`.
 
-- Mô hình 3 khối:
+- **Mô hình 3 khối**:
 
    ```mermaid
    flowchart LR
@@ -117,7 +167,13 @@
        `"]
    ```
 
-## Câu 5
+- **Ví dụ**:
+
+    | n | x | Kết quả                               |
+    |---|---|---------------------------------------|
+    | 5 | 2 | `S(n) = x^1 + x^2 + ... + x^n = 62.0` |
+
+### Câu 5
 
 - **Đề bài**:
     - Viết chương trình tính và in số năm chờ đợi.
@@ -127,7 +183,7 @@
     - Hãy viết chương trình tính số năm ít nhất mà anh X phải chờ đợi kể từ năm gởi tiền
     - Giả sử lãi suất tiết kiệm không đổi, anh X không rút bớt tiền và cũng không gởi thêm tiền trong thời gian chờ đợi.
 
-- Mô hình 3 khối:
+- **Mô hình 3 khối**:
 
    ```mermaid
    flowchart LR
@@ -150,3 +206,13 @@
            In ra thông báo số tiền tích lũy được thực tế và số năm
        `"]
    ```
+
+- **Ví dụ**:
+
+    | Số tiền hiện có | Số tiền mong muốn | Lãi suất/năm | Kết quả |
+    |-----------------|-------------------|--------------|---------|
+    | 1000            | 1200              | 10%          | `2 năm` |
+
+## Author
+
+Khang Nguyen

@@ -31,11 +31,11 @@ public class Question01 {
                     type = Integer.parseInt(sc.nextLine());
 
                     if (type >= 0 && type <= 3) break;
-                    System.out.print("Vui lòng nhập lại một số hợp lệ: [0: Thoát chương trình, 1: Bao, 2: Kéo, 3: Búa]: ");
-
+                    System.out.print("Vui lòng nhập lại một số hợp lệ: [0: Thoát chương trình, 1: Bao, 2: Kéo, 3: " +
+                            "Búa]: ");
                 } catch (Exception e) {
-                    System.out.print("Số không hợp lệ/Không được bỏ trống. Vui lòng nhập lại một số hợp lệ: [0: Thoát chương trình, 1: Bao, 2: Kéo, 3: Búa]: ");
-
+                    System.out.print("Số không hợp lệ/Không được bỏ trống. Vui lòng nhập lại một số hợp lệ: [0: Thoát" +
+                            " chương trình, 1: Bao, 2: Kéo, 3: Búa]: ");
                 }
             }
 
@@ -45,7 +45,7 @@ public class Question01 {
             String userChoice = getChoose(type);
 
             //  random = min + (Math.random() * ((max - min) + 1));
-            int typeComputerChoice = (int) (Math.random() * 4);
+            int typeComputerChoice = (int) (Math.random() * 3) + 1;
             String computerChoice = getChoose(typeComputerChoice);
 
             if (userChoice.equalsIgnoreCase(computerChoice))
@@ -62,7 +62,8 @@ public class Question01 {
         }
 
         String result;
-        String tySo = "[Người chơi thắng: " + userWins + "; Máy tính thắng: " + computerWins + "; Hòa: " + (phrase - userWins - computerWins) + "]";
+        String tySo =
+                "[Người chơi thắng: " + userWins + "; Máy tính thắng: " + computerWins + "; Hòa: " + (phrase - userWins - computerWins) + "]";
 
         if (userWins > computerWins) result = "Người chơi thắng " + tySo;
         else if (userWins < computerWins) result = "Máy tính thắng " + tySo;

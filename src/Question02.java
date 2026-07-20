@@ -16,12 +16,12 @@ public class Question02 {
         final int MIN_TOTAL_NUMBERS = 10_000;
 
         for (int i = 1; ; i++) {
+            total += i;
+
             if (total >= MIN_TOTAL_NUMBERS) {
                 n = i;
                 break;
             }
-
-            total += i;
         }
 
         // OUTPUT
